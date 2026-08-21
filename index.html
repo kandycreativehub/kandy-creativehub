@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Hub | Graphic Design & Creative Agency</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#0f172a',
+                            primary: '#6366f1',
+                            secondary: '#ec4899',
+                            accent: '#06b6d4'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="bg-brand-dark text-slate-100 antialiased selection:bg-brand-primary selection:text-white">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 transition-all duration-300 glass" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="block group">
+                        <div class="h-24 overflow-hidden flex items-start -mt-4">
+                            <img src="creative%20hub%20.png" alt="Creative Hub"
+                                class="h-36 max-w-none object-contain mix-blend-normal opacity-100 group-hover:opacity-90 transition-opacity">
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="index.html" class="nav-link text-sm font-medium text-brand-primary">Home</a>
+                    <a href="about.html"
+                        class="nav-link text-sm font-medium hover:text-brand-primary transition-colors">About Us</a>
+
+                    <!-- Services Dropdown -->
+                    <div class="relative group">
+                        <a href="services.html"
+                            class="nav-link text-sm font-medium hover:text-brand-primary transition-colors flex items-center gap-1">
+                            Services <i
+                                class="fa-solid fa-chevron-down text-xs transition-transform duration-200 group-hover:rotate-180"></i>
+                        </a>
+                        <!-- Dropdown Menu -->
+                        <div
+                            class="absolute left-0 mt-0 w-64 bg-brand-dark/95 backdrop-blur-xl rounded-xl shadow-2xl border border-slate-700 overflow-hidden hidden group-hover:block transition-all opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 duration-200 z-50 max-h-96 overflow-y-auto">
+                            <div class="py-2">
+                                <a href="service-details.html?service=product-design"
+                                    class="block px-4 py-2 text-sm text-slate-300 hover:bg-brand-primary/20 hover:text-white transition-colors border-l-2 border-transparent hover:border-brand-primary">
+                                    <i class="fa-solid fa-box-open mr-2 w-4"></i> Product Design
+                                </a>
+                                <a href="service-details.html?service=website-development"
+                                    class="block px-4 py-2 text-sm text-slate-300 hover:bg-brand-primary/20 hover:text-white transition-colors border-l-2 border-transparent hover:border-brand-primary">
+                                    <i class="fa-solid fa-code mr-2 w-4"></i> Website Development
+                                </a>
+                                <a href="service-details.html?service=ai-video-creating"
+                                    class="block px-4 py-2 text-sm text-slate-300 hover:bg-brand-primary/20 hover:text-white transition-colors border-l-2 border-transparent hover:border-brand-primary">
+                                    <i class="fa-solid fa-wand-magic-sparkles mr-2 w-4"></i> AI Video Creating
+                                </a>
+                                <a href="service-details.html?service=mobile-app-banners"
+                                    class="block px-4 py-2 text-sm text-slate-300 hover:bg-brand-primary/20 hover:text-white transition-colors border-l-2 border-transparent hover:border-brand-primary">
+                                    <i class="fa-solid fa-mobile-screen-button mr-2 w-4"></i> Mobile App Banners Design
+                                </a>
+                                <a href="service-details.html?service=post-design"
+                                    class="block px-4 py-2 text-sm text-slate-300 hover:bg-brand-primary/20 hover:text-white transition-colors border-l-2 border-transparent hover:border-brand-primary">
+                                    <i class="fa-solid fa-images mr-2 w-4"></i> Post Design
+                                </a>
+                                <a href="service-details.html?service=logo-design"
+                                    class="block px-4 py-2 text-sm text-slate-300 hover:bg-brand-primary/20 hover:text-white transition-colors border-l-2 border-transparent hover:border-brand-primary">
+                                    <i class="fa-solid fa-pen-nib mr-2 w-4"></i> Logo Design
+                                </a>
+                                <a href="service-details.html?service=cover-photo-design"
+                                    class="block px-4 py-2 text-sm text-slate-300 hover:bg-brand-primary/20 hover:text-white transition-colors border-l-2 border-transparent hover:border-brand-primary">
+                                    <i class="fa-solid fa-image mr-2 w-4"></i> Cover Photo Design
+                                </a>
+                                <a href="service-details.html?service=certificate-design"
+                                    class="block px-4 py-2 text-sm text-slate-300 hover:bg-brand-primary/20 hover:text-white transition-colors border-l-2 border-transparent hover:border-brand-primary">
+                                    <i class="fa-solid fa-certificate mr-2 w-4"></i> Certificate Design
+                                </a>
+                                <a href="service-details.html?service=banner-design"
+                                    class="block px-4 py-2 text-sm text-slate-300 hover:bg-brand-primary/20 hover:text-white transition-colors border-l-2 border-transparent hover:border-brand-primary">
+                                    <i class="fa-solid fa-scroll mr-2 w-4"></i> Banner Design
+                                </a>
+                                <a href="service-details.html?service=bag-design"
+                                    class="block px-4 py-2 text-sm text-slate-300 hover:bg-brand-primary/20 hover:text-white transition-colors border-l-2 border-transparent hover:border-brand-primary">
+                                    <i class="fa-solid fa-bag-shopping mr-2 w-4"></i> Bag Design
+                                </a>
+                                <a href="service-details.html?service=business-card-design"
+                                    class="block px-4 py-2 text-sm text-slate-300 hover:bg-brand-primary/20 hover:text-white transition-colors border-l-2 border-transparent hover:border-brand-primary">
+                                    <i class="fa-solid fa-address-card mr-2 w-4"></i> Business Card Design
+                                </a>
+                                <a href="service-details.html?service=magazine-design"
+                                    class="block px-4 py-2 text-sm text-slate-300 hover:bg-brand-primary/20 hover:text-white transition-colors border-l-2 border-transparent hover:border-brand-primary">
+                                    <i class="fa-solid fa-book-open mr-2 w-4"></i> Magazine Design
+                                </a>
+                                <a href="service-details.html?service=t-shirt-design"
+                                    class="block px-4 py-2 text-sm text-slate-300 hover:bg-brand-primary/20 hover:text-white transition-colors border-l-2 border-transparent hover:border-brand-primary">
+                                    <i class="fa-solid fa-shirt mr-2 w-4"></i> T-Shirt Design
+                                </a>
+                                <a href="service-details.html?service=leaflet-design"
+                                    class="block px-4 py-2 text-sm text-slate-300 hover:bg-brand-primary/20 hover:text-white transition-colors border-l-2 border-transparent hover:border-brand-primary">
+                                    <i class="fa-solid fa-newspaper mr-2 w-4"></i> Leaflet Design
+                                </a>
+                                <a href="service-details.html?service=tute-covers"
+                                    class="block px-4 py-2 text-sm text-slate-300 hover:bg-brand-primary/20 hover:text-white transition-colors border-l-2 border-transparent hover:border-brand-primary">
+                                    <i class="fa-solid fa-book mr-2 w-4"></i> Tute Covers
+                                </a>
+                                <a href="service-details.html?service=wall-mounted-light-box"
+                                    class="block px-4 py-2 text-sm text-slate-300 hover:bg-brand-primary/20 hover:text-white transition-colors border-l-2 border-transparent hover:border-brand-primary">
+                                    <i class="fa-solid fa-lightbulb mr-2 w-4"></i> Wall Mounted Light Box
+                                </a>
+                                <a href="services.html"
+                                    class="block px-4 py-2 text-xs text-slate-500 hover:text-slate-300 text-center border-t border-slate-700/50 mt-1 pt-2">
+                                    View All Services
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="contact.html"
+                        class="px-5 py-2.5 rounded-full bg-gradient-to-r from-brand-primary to-brand-secondary text-white font-medium text-sm hover:shadow-lg hover:shadow-brand-primary/30 transition-all transform hover:-translate-y-0.5">Contact
+                        Us</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="menu-btn" class="text-slate-300 hover:text-white focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu"
+            class="fixed inset-0 z-50 bg-brand-dark/95 backdrop-blur-xl hidden opacity-0 transition-opacity duration-300">
+            <div class="absolute top-5 right-5">
+                <button id="close-menu-btn" class="text-slate-300 hover:text-white focus:outline-none">
+                    <i class="fa-solid fa-xmark text-3xl"></i>
+                </button>
+            </div>
+            <div class="flex flex-col items-center justify-center h-full space-y-8 text-center">
+                <a href="index.html" class="text-2xl font-bold hover:text-brand-primary transition-colors">Home</a>
+                <a href="about.html" class="text-2xl font-bold hover:text-brand-primary transition-colors">About Us</a>
+                <a href="services.html"
+                    class="text-2xl font-bold hover:text-brand-primary transition-colors">Services</a>
+
+                <a href="contact.html"
+                    class="px-8 py-3 rounded-full bg-gradient-to-r from-brand-primary to-brand-secondary text-white font-bold text-lg">Contact
+                    Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+        <!-- Background Image Slideshow -->
+        <div id="hero-bg-slider" class="absolute inset-0 w-full h-full z-0 overflow-hidden">
+            <!-- Image 1 -->
+            <img src="background (1).jpeg"
+                class="absolute inset-0 w-full h-full object-cover transition-all duration-[2000ms] ease-in-out opacity-100 scale-100"
+                alt="Background 1">
+            <!-- Image 2 -->
+            <img src="background (3).jpeg"
+                class="absolute inset-0 w-full h-full object-cover transition-all duration-[2000ms] ease-in-out opacity-0 scale-110"
+                alt="Background 2">
+            <!-- Image 3 -->
+            <img src="background (4).jpeg"
+                class="absolute inset-0 w-full h-full object-cover transition-all duration-[2000ms] ease-in-out opacity-0 scale-110"
+                alt="Background 3">
+            <!-- Image 4 -->
+            <img src="background (5).jpeg"
+                class="absolute inset-0 w-full h-full object-cover transition-all duration-[2000ms] ease-in-out opacity-0 scale-110"
+                alt="Background 4">
+            <!-- Image 5 -->
+            <img src="background (7).png"
+                class="absolute inset-0 w-full h-full object-cover transition-all duration-[2000ms] ease-in-out opacity-0 scale-110"
+                alt="Background 5">
+
+            <!-- Overlay Gradient -->
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/80 to-transparent z-10"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <div data-aos="fade-up" data-aos-duration="1000">
+                <span
+                    class="inline-block py-1 px-3 rounded-full bg-slate-800/50 border border-slate-700 text-brand-secondary text-sm font-semibold tracking-wider mb-6 drop-shadow-md">WELCOME
+                    TO CREATIVE HUB</span>
+                <h1 class="text-5xl md:text-7xl lg:text-8xl font-black tracking-tight mb-8 leading-tight drop-shadow-xl"
+                    style="text-shadow: 2px 2px 4px rgba(0,0,0,0.7);">
+                    Build <br>
+                    <span class="text-white drop-shadow-md"
+                        style="filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.7));">Your Design</span>
+                </h1>
+
+                <div class="flex justify-center items-center">
+                    <a href="services.html"
+                        class="px-8 py-4 rounded-full bg-white text-brand-dark font-bold text-lg hover:bg-slate-200 transition-colors w-full sm:w-auto text-center">
+                        Explore Services
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Overview -->
+    <section class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-5xl font-bold mb-4">Our <span class="text-brand-primary">Services</span>
+                </h2>
+                <p class="text-slate-400 max-w-2xl mx-auto">We offer a comprehensive suite of design services tailored
+                    to your needs. Whatever you imagine, we create.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- 1. Post Design -->
+                <a href="service-details.html?service=post-design"
+                    class="glass-card p-8 rounded-2xl group block text-left transition-all hover:-translate-y-2"
+                    data-aos="fade-up" data-aos-delay="0">
+                    <div
+                        class="w-14 h-14 rounded-xl bg-pink-500/20 flex items-center justify-center text-pink-500 text-2xl mb-6 group-hover:bg-pink-500 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-images"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-0 text-white group-hover:text-pink-500 transition-colors">Post
+                        Design</h3>
+                </a>
+
+                <!-- 2. Logo Design -->
+                <a href="service-details.html?service=logo-design"
+                    class="glass-card p-8 rounded-2xl group block text-left transition-all hover:-translate-y-2"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <div
+                        class="w-14 h-14 rounded-xl bg-brand-primary/20 flex items-center justify-center text-brand-primary text-2xl mb-6 group-hover:bg-brand-primary group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-pen-nib"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-0 text-white group-hover:text-brand-primary transition-colors">Logo
+                        Design</h3>
+                </a>
+
+                <!-- 3. Tute Covers -->
+                <a href="service-details.html?service=tute-covers"
+                    class="glass-card p-8 rounded-2xl group block text-left transition-all hover:-translate-y-2"
+                    data-aos="fade-up" data-aos-delay="200">
+                    <div
+                        class="w-14 h-14 rounded-xl bg-teal-500/20 flex items-center justify-center text-teal-500 text-2xl mb-6 group-hover:bg-teal-500 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-book"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-0 text-white group-hover:text-teal-500 transition-colors">Tute
+                        Covers</h3>
+                </a>
+
+                <!-- 4. Cv & Cover Letters -->
+                <a href="service-details.html?service=cv-cover-letters"
+                    class="glass-card p-8 rounded-2xl group block text-left transition-all hover:-translate-y-2"
+                    data-aos="fade-up" data-aos-delay="300">
+                    <div
+                        class="w-14 h-14 rounded-xl bg-blue-500/20 flex items-center justify-center text-blue-500 text-2xl mb-6 group-hover:bg-blue-500 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-file-lines"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-0 text-white group-hover:text-blue-500 transition-colors">Cv & Cover
+                        Letters</h3>
+                </a>
+
+                <!-- 5. Product Design -->
+                <a href="service-details.html?service=product-design"
+                    class="glass-card p-8 rounded-2xl group block text-left transition-all hover:-translate-y-2"
+                    data-aos="fade-up" data-aos-delay="400">
+                    <div
+                        class="w-14 h-14 rounded-xl bg-orange-500/20 flex items-center justify-center text-orange-500 text-2xl mb-6 group-hover:bg-orange-500 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-box-open"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-0 text-white group-hover:text-orange-500 transition-colors">Product
+                        Design</h3>
+                </a>
+
+                <!-- 6. Leaflet Design -->
+                <a href="service-details.html?service=leaflet-design"
+                    class="glass-card p-8 rounded-2xl group block text-left transition-all hover:-translate-y-2"
+                    data-aos="fade-up" data-aos-delay="500">
+                    <div
+                        class="w-14 h-14 rounded-xl bg-yellow-500/20 flex items-center justify-center text-yellow-500 text-2xl mb-6 group-hover:bg-yellow-500 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-newspaper"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-0 text-white group-hover:text-yellow-500 transition-colors">Leaflet
+                        Design</h3>
+                </a>
+
+                <!-- 7. Business Card Design -->
+                <a href="service-details.html?service=business-card-design"
+                    class="glass-card p-8 rounded-2xl group block text-left transition-all hover:-translate-y-2"
+                    data-aos="fade-up" data-aos-delay="0">
+                    <div
+                        class="w-14 h-14 rounded-xl bg-purple-500/20 flex items-center justify-center text-purple-500 text-2xl mb-6 group-hover:bg-purple-500 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-address-card"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-0 text-white group-hover:text-purple-500 transition-colors">Business
+                        Card Design</h3>
+                </a>
+
+                <!-- 8. Banner Design -->
+                <a href="service-details.html?service=banner-design"
+                    class="glass-card p-8 rounded-2xl group block text-left transition-all hover:-translate-y-2"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <div
+                        class="w-14 h-14 rounded-xl bg-red-500/20 flex items-center justify-center text-red-500 text-2xl mb-6 group-hover:bg-red-500 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-image"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-0 text-white group-hover:text-red-500 transition-colors">Banner
+                        Design</h3>
+                </a>
+
+                <!-- 9. T-shirt Design -->
+                <a href="service-details.html?service=t-shirt-design"
+                    class="glass-card p-8 rounded-2xl group block text-left transition-all hover:-translate-y-2"
+                    data-aos="fade-up" data-aos-delay="200">
+                    <div
+                        class="w-14 h-14 rounded-xl bg-green-500/20 flex items-center justify-center text-green-500 text-2xl mb-6 group-hover:bg-green-500 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-shirt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-0 text-white group-hover:text-green-500 transition-colors">T-shirt
+                        Design</h3>
+                </a>
+
+                <!-- 10. Company Profile -->
+                <a href="service-details.html?service=company-profile"
+                    class="glass-card p-8 rounded-2xl group block text-left transition-all hover:-translate-y-2"
+                    data-aos="fade-up" data-aos-delay="300">
+                    <div
+                        class="w-14 h-14 rounded-xl bg-slate-500/20 flex items-center justify-center text-slate-400 text-2xl mb-6 group-hover:bg-slate-500 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-building"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-0 text-white group-hover:text-slate-500 transition-colors">Company
+                        Profile</h3>
+                </a>
+
+                <!-- 11. ID Card Design -->
+                <a href="service-details.html?service=id-card-design"
+                    class="glass-card p-8 rounded-2xl group block text-left transition-all hover:-translate-y-2"
+                    data-aos="fade-up" data-aos-delay="400">
+                    <div
+                        class="w-14 h-14 rounded-xl bg-cyan-500/20 flex items-center justify-center text-cyan-500 text-2xl mb-6 group-hover:bg-cyan-500 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-id-badge"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-0 text-white group-hover:text-cyan-500 transition-colors">ID Card
+                        Design</h3>
+                </a>
+
+                <!-- 12. Website Development -->
+                <a href="service-details.html?service=website-development"
+                    class="glass-card p-8 rounded-2xl group block text-left transition-all hover:-translate-y-2"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <div
+                        class="w-14 h-14 rounded-xl bg-indigo-500/20 flex items-center justify-center text-brand-primary text-2xl mb-6 group-hover:bg-brand-primary group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-0 text-white group-hover:text-brand-primary transition-colors">Website Development</h3>
+                </a>
+
+                <!-- 13. AI Video Creating -->
+                <a href="service-details.html?service=ai-video-creating"
+                    class="glass-card p-8 rounded-2xl group block text-left transition-all hover:-translate-y-2"
+                    data-aos="fade-up" data-aos-delay="200">
+                    <div
+                        class="w-14 h-14 rounded-xl bg-pink-500/20 flex items-center justify-center text-brand-secondary text-2xl mb-6 group-hover:bg-brand-secondary group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-0 text-white group-hover:text-brand-secondary transition-colors">AI Video Creating</h3>
+                </a>
+
+                <!-- 14. Mobile App Banners Design -->
+                <a href="service-details.html?service=mobile-app-banners"
+                    class="glass-card p-8 rounded-2xl group block text-left transition-all hover:-translate-y-2"
+                    data-aos="fade-up" data-aos-delay="300">
+                    <div
+                        class="w-14 h-14 rounded-xl bg-violet-500/20 flex items-center justify-center text-violet-400 text-2xl mb-6 group-hover:bg-violet-500 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-mobile-screen-button"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-0 text-white group-hover:text-violet-400 transition-colors">Mobile App Banners Design</h3>
+                </a>
+
+                <!-- 15. Wall Mounted Light Box -->
+                <a href="service-details.html?service=wall-mounted-light-box"
+                    class="glass-card p-8 rounded-2xl group block text-left transition-all hover:-translate-y-2"
+                    data-aos="fade-up" data-aos-delay="400">
+                    <div
+                        class="w-14 h-14 rounded-xl bg-amber-500/20 flex items-center justify-center text-amber-400 text-2xl mb-6 group-hover:bg-amber-500 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-lightbulb"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-0 text-white group-hover:text-amber-400 transition-colors">Wall Mounted Light Box</h3>
+                </a>
+            </div>
+
+            <div class="mt-12 text-center">
+                <a href="services.html"
+                    class="inline-flex items-center gap-2 text-slate-300 hover:text-white transition-colors border-b border-transparent hover:border-brand-primary pb-1">
+                    View All Services <i class="fa-solid fa-arrow-right text-xs"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-24 relative overflow-hidden">
+        <div class="absolute inset-0 bg-brand-primary/10"></div>
+        <div class="max-w-4xl mx-auto px-4 relative z-10 text-center" data-aos="zoom-in">
+            <h2 class="text-4xl md:text-6xl font-black mb-8 leading-tight">Ready to Start <br> Your Project?</h2>
+            <p class="text-xl text-slate-300 mb-10">Let's create something extraordinary together. Contact us today for
+                a free consultation.</p>
+            <a href="contact.html"
+                class="px-10 py-5 rounded-full bg-white text-brand-primary font-bold text-xl hover:scale-105 transition-transform shadow-2xl shadow-brand-primary/50">
+                Get a Quote
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 pt-20 pb-10 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col items-center text-center mb-8">
+                <a href="index.html" class="block mb-6">
+                    <img src="creative%20hub%20.png" alt="Creative Hub" class="h-24 w-auto">
+                </a>
+                <p class="text-slate-400 max-w-lg mb-8">
+                    Professional graphic design services tailored to elevate your brand identity. We craft visuals
+                    that leave a lasting impression.
+                </p>
+                <div class="flex gap-6 justify-center">
+                    <a href="https://www.facebook.com/share/17xUxVZDBp/" target="_blank"
+                        class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-brand-primary hover:text-white transition-all"><i
+                            class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/creative_hubsl?igsh=YTlvNTNpdHlyamVs" target="_blank"
+                        class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-pink-600 hover:text-white transition-all"><i
+                            class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@creativehub08?_r=1&_t=ZS-93sw7Fjfqmy" target="_blank"
+                        class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-black hover:text-white transition-all"><i
+                            class="fa-brands fa-tiktok"></i></a>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 pt-8 text-center text-slate-500 text-sm">
+                &copy; 2026 Creative Hub. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- AOS Animation Script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

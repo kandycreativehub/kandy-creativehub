@@ -1,0 +1,595 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio & Video Showcase | Creative Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#0f172a',
+                            primary: '#6366f1',
+                            secondary: '#ec4899',
+                            accent: '#06b6d4'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="bg-brand-dark text-slate-100 antialiased selection:bg-brand-primary selection:text-white min-h-screen flex flex-col justify-between">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 transition-all duration-300 glass" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="block group">
+                        <div class="h-24 overflow-hidden flex items-start -mt-4">
+                            <img src="creative%20hub%20.png" alt="Creative Hub"
+                                class="h-36 max-w-none object-contain mix-blend-normal opacity-100 group-hover:opacity-90 transition-opacity">
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="index.html"
+                        class="nav-link text-sm font-medium hover:text-brand-primary transition-colors">Home</a>
+                    <a href="about.html"
+                        class="nav-link text-sm font-medium hover:text-brand-primary transition-colors">About Us</a>
+                    <a href="services.html"
+                        class="nav-link text-sm font-medium hover:text-brand-primary transition-colors">Services</a>
+                    <a href="portfolio.html"
+                        class="nav-link text-sm font-medium text-brand-primary transition-colors">Portfolio</a>
+                    <a href="contact.html"
+                        class="px-5 py-2.5 rounded-full bg-gradient-to-r from-brand-primary to-brand-secondary text-white font-medium text-sm hover:shadow-lg hover:shadow-brand-primary/30 transition-all transform hover:-translate-y-0.5">Contact
+                        Us</a>
+                </div>
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="menu-btn" class="text-slate-300 hover:text-white focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu"
+            class="fixed inset-0 z-50 bg-brand-dark/95 backdrop-blur-xl hidden opacity-0 transition-opacity duration-300">
+            <div class="absolute top-5 right-5">
+                <button id="close-menu-btn" class="text-slate-300 hover:text-white focus:outline-none">
+                    <i class="fa-solid fa-xmark text-3xl"></i>
+                </button>
+            </div>
+            <div class="flex flex-col items-center justify-center h-full space-y-8 text-center">
+                <a href="index.html" class="text-2xl font-bold hover:text-brand-primary transition-colors">Home</a>
+                <a href="about.html" class="text-2xl font-bold hover:text-brand-primary transition-colors">About Us</a>
+                <a href="services.html"
+                    class="text-2xl font-bold hover:text-brand-primary transition-colors">Services</a>
+                <a href="portfolio.html" class="text-2xl font-bold text-brand-primary transition-colors">Portfolio</a>
+                <a href="contact.html"
+                    class="px-8 py-3 rounded-full bg-gradient-to-r from-brand-primary to-brand-secondary text-white font-bold text-lg">Contact
+                    Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <header class="pt-32 pb-10 relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden z-0 pointer-events-none">
+            <div class="absolute top-10 left-1/4 w-96 h-96 bg-brand-primary/15 blur-[130px] rounded-full"></div>
+            <div class="absolute top-20 right-1/4 w-96 h-96 bg-brand-secondary/15 blur-[130px] rounded-full"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-primary/10 border border-brand-primary/20 text-brand-primary text-xs font-semibold uppercase tracking-wider mb-4" data-aos="fade-down">
+                <i class="fa-solid fa-film"></i> Design & Motion Showcase
+            </div>
+            <h1 class="text-4xl md:text-6xl font-black mb-6" data-aos="fade-down" data-aos-delay="50">
+                Our Creative <span class="text-gradient">Portfolio</span>
+            </h1>
+            <p class="text-base md:text-lg text-slate-400 max-w-2xl mx-auto mb-10" data-aos="fade-up" data-aos-delay="100">
+                Discover our work across Graphic Design, Video Editing, Motion Graphics, and Social Media content creation.
+            </p>
+
+            <!-- Filter Tabs -->
+            <div class="flex flex-wrap justify-center gap-2.5 sm:gap-3" data-aos="fade-up" data-aos-delay="150">
+                <button data-filter="all"
+                    class="portfolio-filter-btn px-6 py-2.5 rounded-full bg-brand-primary text-white font-medium text-sm transition-all shadow-lg shadow-brand-primary/25">
+                    <i class="fa-solid fa-layer-group mr-1.5"></i> All Work
+                </button>
+                <button data-filter="video"
+                    class="portfolio-filter-btn px-6 py-2.5 rounded-full glass hover:bg-white/10 text-slate-300 hover:text-white font-medium text-sm transition-all">
+                    <i class="fa-solid fa-video mr-1.5 text-brand-secondary"></i> Video & Motion
+                </button>
+                <button data-filter="reels"
+                    class="portfolio-filter-btn px-6 py-2.5 rounded-full glass hover:bg-white/10 text-slate-300 hover:text-white font-medium text-sm transition-all">
+                    <i class="fa-brands fa-tiktok mr-1.5 text-brand-accent"></i> Reels & Shorts
+                </button>
+                <button data-filter="logo"
+                    class="portfolio-filter-btn px-6 py-2.5 rounded-full glass hover:bg-white/10 text-slate-300 hover:text-white font-medium text-sm transition-all">
+                    <i class="fa-solid fa-bezier-curve mr-1.5 text-indigo-400"></i> Logos & Branding
+                </button>
+                <button data-filter="social"
+                    class="portfolio-filter-btn px-6 py-2.5 rounded-full glass hover:bg-white/10 text-slate-300 hover:text-white font-medium text-sm transition-all">
+                    <i class="fa-solid fa-share-nodes mr-1.5 text-pink-400"></i> Social Media
+                </button>
+                <button data-filter="print"
+                    class="portfolio-filter-btn px-6 py-2.5 rounded-full glass hover:bg-white/10 text-slate-300 hover:text-white font-medium text-sm transition-all">
+                    <i class="fa-solid fa-print mr-1.5 text-yellow-400"></i> Print & Packaging
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Portfolio Grid -->
+    <main class="pb-24 flex-grow">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div id="portfolioGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- ============================================== -->
+                <!-- VIDEO & MOTION GRAPHICS PROJECTS               -->
+                <!-- ============================================== -->
+
+                <!-- Video Project 1: Motion Graphics & 3D Logo Reveal -->
+                <div class="portfolio-item group relative overflow-hidden rounded-3xl glass border border-slate-800/80 hover:border-brand-primary/50 transition-all duration-500 shadow-xl cursor-pointer"
+                    data-category="video"
+                    data-video-src="https://www.youtube.com/embed/WhWc3b3KhnY"
+                    data-video-type="youtube"
+                    data-video-title="Cyberpunk 3D Logo Animation & VFX"
+                    data-video-category="3D Motion Graphics"
+                    data-aos="fade-up">
+                    
+                    <div class="relative aspect-video overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2670&auto=format&fit=crop"
+                            alt="Motion Graphics Showcase"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        
+                        <!-- Overlay Gradient -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/40 to-transparent"></div>
+
+                        <!-- Top Badges -->
+                        <div class="absolute top-4 left-4 flex gap-2">
+                            <span class="px-3 py-1 rounded-full bg-brand-primary/90 backdrop-blur-md text-white text-xs font-semibold flex items-center gap-1.5 shadow-lg">
+                                <i class="fa-solid fa-play text-[10px]"></i> Video
+                            </span>
+                            <span class="px-3 py-1 rounded-full bg-slate-900/80 backdrop-blur-md text-slate-300 text-xs font-medium border border-slate-700">
+                                4K 60FPS
+                            </span>
+                        </div>
+
+                        <!-- Duration Badge -->
+                        <div class="absolute top-4 right-4 px-2.5 py-1 rounded-md bg-black/70 backdrop-blur-md text-slate-200 text-xs font-mono">
+                            0:45
+                        </div>
+
+                        <!-- Central Animated Play Button -->
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="w-16 h-16 rounded-full bg-gradient-to-r from-brand-primary to-brand-secondary text-white flex items-center justify-center text-xl shadow-2xl play-btn-pulse group-hover:scale-110 transition-transform duration-300">
+                                <i class="fa-solid fa-play ml-1"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card Body -->
+                    <div class="p-6">
+                        <div class="flex items-center justify-between text-xs text-slate-400 mb-2">
+                            <span class="text-brand-accent font-bold uppercase tracking-wider">Motion Graphics</span>
+                            <span>After Effects • Blender</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white group-hover:text-brand-primary transition-colors">
+                            Cyberpunk 3D Logo Reveal
+                        </h3>
+                        <p class="text-sm text-slate-400 mt-2 line-clamp-2">
+                            High energy cinematic logo animation with dynamic glitch shaders, particle bursts, and custom sound design.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Video Project 2: Social Media Reel / TikTok Edit -->
+                <div class="portfolio-item group relative overflow-hidden rounded-3xl glass border border-slate-800/80 hover:border-brand-secondary/50 transition-all duration-500 shadow-xl cursor-pointer"
+                    data-category="video reels"
+                    data-video-src="https://www.youtube.com/embed/aqz-KE-bpKQ"
+                    data-video-type="youtube"
+                    data-video-title="Viral Fitness Brand Instagram Reel"
+                    data-video-category="Social Media Video Edit"
+                    data-aos="fade-up"
+                    data-aos-delay="100">
+                    
+                    <div class="relative aspect-video overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2670&auto=format&fit=crop"
+                            alt="Reel Editing"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/40 to-transparent"></div>
+
+                        <div class="absolute top-4 left-4 flex gap-2">
+                            <span class="px-3 py-1 rounded-full bg-brand-secondary/90 backdrop-blur-md text-white text-xs font-semibold flex items-center gap-1.5 shadow-lg">
+                                <i class="fa-brands fa-instagram"></i> Reel
+                            </span>
+                            <span class="px-3 py-1 rounded-full bg-slate-900/80 backdrop-blur-md text-slate-300 text-xs font-medium border border-slate-700">
+                                9:16 Vertical
+                            </span>
+                        </div>
+
+                        <div class="absolute top-4 right-4 px-2.5 py-1 rounded-md bg-black/70 backdrop-blur-md text-slate-200 text-xs font-mono">
+                            0:30
+                        </div>
+
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="w-16 h-16 rounded-full bg-gradient-to-r from-brand-secondary to-pink-500 text-white flex items-center justify-center text-xl shadow-2xl play-btn-pulse group-hover:scale-110 transition-transform duration-300">
+                                <i class="fa-solid fa-play ml-1"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-6">
+                        <div class="flex items-center justify-between text-xs text-slate-400 mb-2">
+                            <span class="text-pink-400 font-bold uppercase tracking-wider">Reels & Shorts</span>
+                            <span>Premiere Pro • CapCut</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white group-hover:text-brand-secondary transition-colors">
+                            Viral Fitness Social Media Reel
+                        </h3>
+                        <p class="text-sm text-slate-400 mt-2 line-clamp-2">
+                            Fast-paced beat syncing, trending kinetic typography captions, color grading, and seamless speed ramps.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Video Project 3: Commercial Brand Promo Video -->
+                <div class="portfolio-item group relative overflow-hidden rounded-3xl glass border border-slate-800/80 hover:border-cyan-500/50 transition-all duration-500 shadow-xl cursor-pointer"
+                    data-category="video"
+                    data-video-src="https://www.youtube.com/embed/jNQXAC9IVRw"
+                    data-video-type="youtube"
+                    data-video-title="Minimalist Luxury Brand Commercial"
+                    data-video-category="Commercial Promo"
+                    data-aos="fade-up"
+                    data-aos-delay="200">
+                    
+                    <div class="relative aspect-video overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1541462608143-df3373bd74b6?q=80&w=2670&auto=format&fit=crop"
+                            alt="Commercial Video"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/40 to-transparent"></div>
+
+                        <div class="absolute top-4 left-4 flex gap-2">
+                            <span class="px-3 py-1 rounded-full bg-cyan-600/90 backdrop-blur-md text-white text-xs font-semibold flex items-center gap-1.5 shadow-lg">
+                                <i class="fa-solid fa-clapperboard"></i> Commercial
+                            </span>
+                        </div>
+
+                        <div class="absolute top-4 right-4 px-2.5 py-1 rounded-md bg-black/70 backdrop-blur-md text-slate-200 text-xs font-mono">
+                            1:15
+                        </div>
+
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="w-16 h-16 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 text-white flex items-center justify-center text-xl shadow-2xl play-btn-pulse group-hover:scale-110 transition-transform duration-300">
+                                <i class="fa-solid fa-play ml-1"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-6">
+                        <div class="flex items-center justify-between text-xs text-slate-400 mb-2">
+                            <span class="text-cyan-400 font-bold uppercase tracking-wider">Brand Commercial</span>
+                            <span>DaVinci Resolve</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors">
+                            Urban Modern Brand Commercial
+                        </h3>
+                        <p class="text-sm text-slate-400 mt-2 line-clamp-2">
+                            Cinematic commercial cut with professional audio mastering, film LUTs color grading, and elegant motion titles.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Video Project 4: YouTube Intro & Gaming / Tech Stinger -->
+                <div class="portfolio-item group relative overflow-hidden rounded-3xl glass border border-slate-800/80 hover:border-purple-500/50 transition-all duration-500 shadow-xl cursor-pointer"
+                    data-category="video reels"
+                    data-video-src="https://www.youtube.com/embed/WhWc3b3KhnY"
+                    data-video-type="youtube"
+                    data-video-title="YouTube Channel Intro & Stream Stinger"
+                    data-video-category="YouTube Video Graphics"
+                    data-aos="fade-up"
+                    data-aos-delay="100">
+                    
+                    <div class="relative aspect-video overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=2671&auto=format&fit=crop"
+                            alt="Gaming Stream Graphics"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/40 to-transparent"></div>
+
+                        <div class="absolute top-4 left-4 flex gap-2">
+                            <span class="px-3 py-1 rounded-full bg-purple-600/90 backdrop-blur-md text-white text-xs font-semibold flex items-center gap-1.5 shadow-lg">
+                                <i class="fa-brands fa-youtube"></i> YouTube
+                            </span>
+                        </div>
+
+                        <div class="absolute top-4 right-4 px-2.5 py-1 rounded-md bg-black/70 backdrop-blur-md text-slate-200 text-xs font-mono">
+                            0:20
+                        </div>
+
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="w-16 h-16 rounded-full bg-gradient-to-r from-purple-500 to-indigo-600 text-white flex items-center justify-center text-xl shadow-2xl play-btn-pulse group-hover:scale-110 transition-transform duration-300">
+                                <i class="fa-solid fa-play ml-1"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-6">
+                        <div class="flex items-center justify-between text-xs text-slate-400 mb-2">
+                            <span class="text-purple-400 font-bold uppercase tracking-wider">Stream & Video</span>
+                            <span>After Effects</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white group-hover:text-purple-400 transition-colors">
+                            Channel Intro & Stream Stinger
+                        </h3>
+                        <p class="text-sm text-slate-400 mt-2 line-clamp-2">
+                            Dynamic neon gaming overlays, animated lower-thirds, subscribe call-to-actions, and transitions.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- ============================================== -->
+                <!-- GRAPHIC DESIGN & BRANDING PROJECTS             -->
+                <!-- ============================================== -->
+
+                <!-- Graphic Project 1: Logo Design -->
+                <div class="portfolio-item group relative overflow-hidden rounded-3xl glass border border-slate-800/80 hover:border-brand-primary/50 transition-all duration-500 shadow-xl"
+                    data-category="logo"
+                    data-aos="fade-up">
+                    <div class="relative aspect-video overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1626785774573-4b799312c95d?q=80&w=2670&auto=format&fit=crop"
+                            alt="Logo Design"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/40 to-transparent"></div>
+                        <div class="absolute top-4 left-4">
+                            <span class="px-3 py-1 rounded-full bg-indigo-600/90 backdrop-blur-md text-white text-xs font-semibold">
+                                Logo Design
+                            </span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between text-xs text-slate-400 mb-2">
+                            <span class="text-brand-primary font-bold uppercase tracking-wider">Branding</span>
+                            <span>Illustrator • Vector</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white group-hover:text-brand-primary transition-colors">
+                            Neon Brands Identity
+                        </h3>
+                        <p class="text-sm text-slate-400 mt-2 line-clamp-2">
+                            Modern typography and iconic geometric logo crafted for a futuristic digital enterprise.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Graphic Project 2: Social Media Post Design -->
+                <div class="portfolio-item group relative overflow-hidden rounded-3xl glass border border-slate-800/80 hover:border-pink-500/50 transition-all duration-500 shadow-xl"
+                    data-category="social"
+                    data-aos="fade-up"
+                    data-aos-delay="100">
+                    <div class="relative aspect-video overflow-hidden">
+                        <img src="post desing/sellora_bundle.jpeg"
+                            alt="Sellora Productivity Bundle Design"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/40 to-transparent"></div>
+                        <div class="absolute top-4 left-4">
+                            <span class="px-3 py-1 rounded-full bg-pink-600/90 backdrop-blur-md text-white text-xs font-semibold">
+                                Social Post
+                            </span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between text-xs text-slate-400 mb-2">
+                            <span class="text-pink-400 font-bold uppercase tracking-wider">Social Media</span>
+                            <span>Photoshop • Illustrator</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white group-hover:text-pink-400 transition-colors">
+                            Sellora Digital Product Ad Campaign
+                        </h3>
+                        <p class="text-sm text-slate-400 mt-2 line-clamp-2">
+                            High-converting social media banner and carousel templates tailored for Instagram and Facebook ads.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Graphic Project 2B: Food Promotion Post Design -->
+                <div class="portfolio-item group relative overflow-hidden rounded-3xl glass border border-slate-800/80 hover:border-emerald-500/50 transition-all duration-500 shadow-xl"
+                    data-category="social"
+                    data-aos="fade-up"
+                    data-aos-delay="150">
+                    <div class="relative aspect-video overflow-hidden">
+                        <img src="post desing/kandy_special_biriyani.jpeg"
+                            alt="Kandy Food Hotel Promo Post"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/40 to-transparent"></div>
+                        <div class="absolute top-4 left-4">
+                            <span class="px-3 py-1 rounded-full bg-emerald-600/90 backdrop-blur-md text-white text-xs font-semibold">
+                                Restaurant Post
+                            </span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between text-xs text-slate-400 mb-2">
+                            <span class="text-emerald-400 font-bold uppercase tracking-wider">Social Media</span>
+                            <span>Photoshop • Food Creative</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white group-hover:text-emerald-400 transition-colors">
+                            Kandy Food & Catering Promotions
+                        </h3>
+                        <p class="text-sm text-slate-400 mt-2 line-clamp-2">
+                            Eye-catching food social media advertisement featuring mouth-watering aesthetics and bold typography.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Graphic Project 3: Web UI Design -->
+                <div class="portfolio-item group relative overflow-hidden rounded-3xl glass border border-slate-800/80 hover:border-cyan-500/50 transition-all duration-500 shadow-xl"
+                    data-category="web"
+                    data-aos="fade-up"
+                    data-aos-delay="200">
+                    <div class="relative aspect-video overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1559028013-cae7ca572571?q=80&w=2670&auto=format&fit=crop"
+                            alt="Web Design"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/40 to-transparent"></div>
+                        <div class="absolute top-4 left-4">
+                            <span class="px-3 py-1 rounded-full bg-cyan-600/90 backdrop-blur-md text-white text-xs font-semibold">
+                                Web & UI
+                            </span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between text-xs text-slate-400 mb-2">
+                            <span class="text-cyan-400 font-bold uppercase tracking-wider">UI / UX</span>
+                            <span>Figma • Tailwind</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors">
+                            Tech Startup SaaS Interface
+                        </h3>
+                        <p class="text-sm text-slate-400 mt-2 line-clamp-2">
+                            Sleek dark-mode dashboard and landing page design built with seamless user experience principles.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Graphic Project 4: Packaging & Print Design -->
+                <div class="portfolio-item group relative overflow-hidden rounded-3xl glass border border-slate-800/80 hover:border-yellow-500/50 transition-all duration-500 shadow-xl"
+                    data-category="print"
+                    data-aos="fade-up">
+                    <div class="relative aspect-video overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1626785774625-ddcddc3445e9?q=80&w=2671&auto=format&fit=crop"
+                            alt="Packaging Design"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/40 to-transparent"></div>
+                        <div class="absolute top-4 left-4">
+                            <span class="px-3 py-1 rounded-full bg-yellow-600/90 backdrop-blur-md text-white text-xs font-semibold">
+                                Print & Packaging
+                            </span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between text-xs text-slate-400 mb-2">
+                            <span class="text-yellow-400 font-bold uppercase tracking-wider">Packaging</span>
+                            <span>Illustrator • 3D Mockup</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white group-hover:text-yellow-400 transition-colors">
+                            Eco Organic Soap Packaging
+                        </h3>
+                        <p class="text-sm text-slate-400 mt-2 line-clamp-2">
+                            Eco-conscious luxury product box and pouch label design with print-ready die lines.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Graphic Project 5: Magazine & Leaflet Design -->
+                <div class="portfolio-item group relative overflow-hidden rounded-3xl glass border border-slate-800/80 hover:border-emerald-500/50 transition-all duration-500 shadow-xl"
+                    data-category="print"
+                    data-aos="fade-up"
+                    data-aos-delay="100">
+                    <div class="relative aspect-video overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=2574&auto=format&fit=crop"
+                            alt="Editorial Design"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/40 to-transparent"></div>
+                        <div class="absolute top-4 left-4">
+                            <span class="px-3 py-1 rounded-full bg-emerald-600/90 backdrop-blur-md text-white text-xs font-semibold">
+                                Magazine & Print
+                            </span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between text-xs text-slate-400 mb-2">
+                            <span class="text-emerald-400 font-bold uppercase tracking-wider">Editorial</span>
+                            <span>InDesign • Photoshop</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white group-hover:text-emerald-400 transition-colors">
+                            Creative Arts Magazine
+                        </h3>
+                        <p class="text-sm text-slate-400 mt-2 line-clamp-2">
+                            Clean editorial layouts, high contrast typography, and vibrant multi-page spread design.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Call to Action Banner -->
+            <div class="mt-20 p-8 sm:p-12 rounded-3xl bg-gradient-to-r from-brand-primary/20 via-purple-900/20 to-brand-secondary/20 border border-slate-700/60 backdrop-blur-xl text-center relative overflow-hidden" data-aos="zoom-in">
+                <div class="relative z-10 max-w-2xl mx-auto">
+                    <h2 class="text-2xl sm:text-3xl font-black text-white mb-4">Have a Video or Design Project in Mind?</h2>
+                    <p class="text-slate-300 text-sm sm:text-base mb-8">
+                        Let's collaborate to bring your brand vision to life with world-class motion graphics, video editing, and graphic design.
+                    </p>
+                    <a href="contact.html" class="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-gradient-to-r from-brand-primary to-brand-secondary text-white font-bold hover:shadow-xl hover:shadow-brand-primary/30 transition-all transform hover:-translate-y-0.5">
+                        <i class="fa-solid fa-paper-plane"></i> Start a Project
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- ============================================== -->
+    <!-- VIDEO LIGHTBOX MODAL POPUP                     -->
+    <!-- ============================================== -->
+    <div id="videoModal" class="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 md:p-10 bg-black/90 backdrop-blur-md hidden opacity-0 pointer-events-none transition-opacity duration-300">
+        <div id="videoModalBackdrop" class="absolute inset-0"></div>
+        <div class="relative w-full max-w-5xl bg-slate-900 border border-slate-700/80 rounded-3xl overflow-hidden shadow-2xl z-10 transform transition-transform">
+            
+            <!-- Modal Header -->
+            <div class="flex items-center justify-between px-6 py-4 border-b border-slate-800 bg-slate-900/95">
+                <div>
+                    <span id="modalVideoCategory" class="text-xs uppercase font-bold tracking-wider text-brand-primary">
+                        Motion Graphics
+                    </span>
+                    <h3 id="modalVideoTitle" class="text-base sm:text-xl font-bold text-white truncate max-w-md sm:max-w-xl">
+                        Project Showcase
+                    </h3>
+                </div>
+                <button id="closeVideoModal" class="w-10 h-10 rounded-full bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white flex items-center justify-center transition-colors focus:outline-none">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+
+            <!-- Video Player Container (16:9) -->
+            <div class="relative w-full aspect-video bg-black flex items-center justify-center">
+                <!-- YouTube Player Embed -->
+                <iframe id="modalVideoIframe" class="w-full h-full border-0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+                
+                <!-- HTML5 MP4 Player -->
+                <video id="modalHtml5Video" class="w-full h-full hidden" controls playsinline></video>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 pt-16 pb-10 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-slate-500 text-sm">© 2026 Creative Hub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
